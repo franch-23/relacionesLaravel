@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Clientes;
+use App\Models\Categorias;
+use App\Models\Productos;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Clientes::factory(10)->create();
+       $this->call([
+           ClientesSeeder::class,
+           CategoriasSeeder::class,
+           ProductosSeeder::class,
+       ]);
+
     }
 }

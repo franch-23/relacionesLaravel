@@ -17,6 +17,9 @@ class CreateClientesTable extends Migration
             $table->id();
             $table->string('nombre', 150);
             $table->string('apellidos', 200);
+            $table->string('email', 64)->unique();
+            $table->string('password');
+            $table->timestamps();
         });
     }
 

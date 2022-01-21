@@ -27,4 +27,9 @@ Route::get("/producto/{id}",function ($id){
     foreach ($producto as $productos){
         echo $producto->nombre . "<br>";
     }
+    Route::post('login',[\App\Http\Controllers\loginController::class, 'authenticate']);
+
 });
+
+Route::post('login',[\App\Http\Controllers\loginController::class, 'authenticate']);
+
