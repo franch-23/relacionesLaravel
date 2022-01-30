@@ -18,7 +18,7 @@ class loginController extends Controller
         }
         if(Auth::attempt($credentials)){
 
-            return Auth::clientes()->toJson();
+            return Auth::user()->toJson();
         }
         return 'algo falla ';
     }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,9 +28,8 @@ Route::get("/producto/{id}",function ($id){
     foreach ($producto as $productos){
         echo $producto->nombre . "<br>";
     }
-    Route::post('login',[\App\Http\Controllers\loginController::class, 'authenticate']);
+    /*Route::post('login',[\App\Http\Controllers\loginController::class, 'authenticate']);*/
 
 });
-
 Route::post('login',[\App\Http\Controllers\loginController::class, 'authenticate']);
-
+Route::get('prueba',[\App\Http\Controllers\pruebaController::class,'prueba'])->middleware(islogendmiddleware::class);
